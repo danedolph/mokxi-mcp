@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mokxi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build Arduino, ESP32 and Raspberry Pi Pico circuits with code from ChatGPT. Mokxi checks the circuit and returns a link that opens and runs it in the Mokxi browser simulator.",
   "author": {
     "name": "Mokxi LLC",
@@ -101,7 +101,7 @@
         "commerce_description": "The plugin does not sell anything or take payments. Mokxi plans are bought on mokxi.com."
       },
       "publication": {
-        "release_notes": "First release: list boards, search parts, check a project and create a runnable Mokxi link, plus a circuit-building skill."
+        "release_notes": "First release: list boards, search parts, check a project and create a runnable Mokxi link, plus a circuit-building skill that uses only Mokxi's own results."
       }
     }
   }
