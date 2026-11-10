@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mokxi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build Arduino, ESP32 and Raspberry Pi Pico circuits with code from ChatGPT. Mokxi checks the circuit and returns a link that opens and runs it in the Mokxi browser simulator.",
   "author": {
     "name": "Mokxi LLC",
@@ -11,16 +11,29 @@
   "homepage": "https://mokxi.com",
   "repository": "https://github.com/danedolph/mokxi-mcp",
   "license": "MIT",
-  "keywords": ["arduino", "esp32", "raspberry pi pico", "electronics", "simulator", "education", "iot"],
+  "keywords": [
+    "arduino",
+    "esp32",
+    "raspberry pi pico",
+    "electronics",
+    "simulator",
+    "education",
+    "iot"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Mokxi",
         "shortDescription": "Build and run circuits",
-        "longDescription": "Mokxi turns a plain request into a working electronics project. ChatGPT picks a board and parts from Mokxi's catalog of 500+ parts and 44 boards (Arduino, ESP32, Raspberry Pi Pico, STM32 and more), wires them, writes the sketch, checks the circuit the way the Mokxi editor does, and returns a link that opens and runs the project in the Mokxi browser simulator. Good for students, teachers and hobbyists who want to try an idea before buying parts. Limitations: Mokxi simulates circuits; it does not control real hardware. Signing in to Mokxi is required. Free accounts can create 10 projects a day through ChatGPT, and Mokxi Pro has no daily limit.",
+        "longDescription": "Mokxi turns a plain request into a working electronics project. ChatGPT picks a board and parts from Mokxi's catalog of 500+ parts and 44 boards (Arduino, ESP32, Raspberry Pi Pico, STM32 and more), wires them, writes the sketch, checks the circuit the way the Mokxi editor does, and returns a link that opens and runs the project in the Mokxi browser simulator. Good for students, teachers and hobbyists who want to try an idea before buying parts. Limitations: Mokxi simulates circuits; it does not control real hardware. Signing in to Mokxi is required.",
         "developerName": "Mokxi LLC",
-        "category": "Education",
-        "capabilities": ["List simulated boards", "Search electronic parts", "Check a circuit project", "Create a runnable project link"],
+        "category": "Developer Tools",
+        "capabilities": [
+          "List simulated boards",
+          "Search electronic parts",
+          "Check a circuit project",
+          "Create a runnable project link"
+        ],
         "websiteURL": "https://mokxi.com",
         "supportURL": "https://mokxi.com/support",
         "privacyPolicyURL": "https://mokxi.com/privacy",
@@ -88,7 +101,7 @@
         "commerce_description": "The plugin does not sell anything or take payments. Mokxi plans are bought on mokxi.com."
       },
       "publication": {
-        "release_notes": "First release: list boards, search parts, check a project and create a runnable Mokxi link."
+        "release_notes": "First release: list boards, search parts, check a project and create a runnable Mokxi link, plus a circuit-building skill."
       }
     }
   }
