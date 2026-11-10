@@ -1,5 +1,7 @@
 # Mokxi MCP server
 
+[![Mokxi MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/com.mokxi/mokxi/badges/score.svg)](https://glama.ai/mcp/connectors/com.mokxi/mokxi)
+
 Ask your AI assistant for a circuit and get one that works.
 
 Mokxi's remote MCP server lets Claude, ChatGPT, Cursor, VS Code and other MCP clients:
