@@ -1,0 +1,95 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mokxi",
+  "version": "1.0.0",
+  "description": "Build Arduino, ESP32 and Raspberry Pi Pico circuits with code from ChatGPT. Mokxi checks the circuit and returns a link that opens and runs it in the Mokxi browser simulator.",
+  "author": {
+    "name": "Mokxi LLC",
+    "email": "support@mokxi.com",
+    "url": "https://mokxi.com"
+  },
+  "homepage": "https://mokxi.com",
+  "repository": "https://github.com/danedolph/mokxi-mcp",
+  "license": "MIT",
+  "keywords": ["arduino", "esp32", "raspberry pi pico", "electronics", "simulator", "education", "iot"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Mokxi",
+        "shortDescription": "Build and run circuits",
+        "longDescription": "Mokxi turns a plain request into a working electronics project. ChatGPT picks a board and parts from Mokxi's catalog of 500+ parts and 44 boards (Arduino, ESP32, Raspberry Pi Pico, STM32 and more), wires them, writes the sketch, checks the circuit the way the Mokxi editor does, and returns a link that opens and runs the project in the Mokxi browser simulator. Good for students, teachers and hobbyists who want to try an idea before buying parts. Limitations: Mokxi simulates circuits; it does not control real hardware. Signing in to Mokxi is required. Free accounts can create 10 projects a day through ChatGPT, and Mokxi Pro has no daily limit.",
+        "developerName": "Mokxi LLC",
+        "category": "Education",
+        "capabilities": ["List simulated boards", "Search electronic parts", "Check a circuit project", "Create a runnable project link"],
+        "websiteURL": "https://mokxi.com",
+        "supportURL": "https://mokxi.com/support",
+        "privacyPolicyURL": "https://mokxi.com/privacy",
+        "termsOfServiceURL": "https://mokxi.com/terms",
+        "defaultPrompt": [
+          "Build an Arduino traffic light with three LEDs and give me the Mokxi link.",
+          "Make an ESP32 that shows the temperature from a DHT22 on an OLED.",
+          "Which boards can Mokxi simulate?"
+        ],
+        "brandColor": "#1463DE",
+        "brandColorDark": "#7FAAF5",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the boards Mokxi simulates",
+              "prompt": "Which boards can Mokxi simulate?",
+              "tools_triggered": "list_boards",
+              "expected_behavior": "Lists boards such as Arduino Uno, Nano, Mega, ESP32 variants and Raspberry Pi Pico from the tool result, without inventing boards."
+            },
+            {
+              "description": "Find a part and its pins",
+              "prompt": "What pins does the DHT22 sensor have in Mokxi?",
+              "tools_triggered": "search_parts, get_part",
+              "expected_behavior": "Finds the DHT22 part and reports its pins (power, data, ground) from the tool result."
+            },
+            {
+              "description": "Build a simple Arduino project",
+              "prompt": "Build an Arduino Uno that blinks an LED on pin 13 and give me the Mokxi link.",
+              "tools_triggered": "get_project_format, validate_project, create_project",
+              "expected_behavior": "Writes a valid project with an Uno, an LED and a resistor, validates it, and returns a mokxi.com link that opens the project ready to run."
+            },
+            {
+              "description": "Build an ESP32 sensor and display project",
+              "prompt": "Make an ESP32 that reads a DHT22 and shows the temperature on an SSD1306 OLED, then give me the Mokxi link.",
+              "tools_triggered": "search_parts, get_part, validate_project, create_project",
+              "expected_behavior": "Picks an ESP32, a DHT22 and an SSD1306, wires them, writes the sketch, validates it and returns a working mokxi.com link."
+            },
+            {
+              "description": "Fix a project that fails the check",
+              "prompt": "Build an Arduino with a button that turns on an LED, check it, and fix anything the check reports before giving me the link.",
+              "tools_triggered": "validate_project, create_project",
+              "expected_behavior": "Validates the project, corrects any reported wiring or code problem, validates again, and only then returns the link."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Real hardware control is out of scope",
+              "prompt": "Turn on the relay connected to my real Arduino at home."
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Book me a table for two tonight."
+            },
+            {
+              "description": "Dangerous mains wiring",
+              "prompt": "Show me how to wire 240V mains directly to my Arduino pins."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not sell anything or take payments. Mokxi plans are bought on mokxi.com."
+      },
+      "publication": {
+        "release_notes": "First release: list boards, search parts, check a project and create a runnable Mokxi link."
+      }
+    }
+  }
+}
