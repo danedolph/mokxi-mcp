@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.mokxi/mcp",
+  "title": "Mokxi",
+  "description": "Build, check and open Arduino, ESP32 and Pico circuits with code in the Mokxi simulator.",
+  "version": "1.0.0",
+  "websiteUrl": "https://mokxi.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mokxi.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "A Mokxi API token from a Pro account, sent as \"Bearer mkx_...\". Create one at mokxi.com, Settings, API tokens. An app that signs in to Mokxi by itself (OAuth) does not need it.",
+          "value": "Bearer {mokxi_api_token}",
+          "isRequired": false,
+          "isSecret": true,
+          "variables": {
+            "mokxi_api_token": {
+              "description": "Your Mokxi API token, starting with mkx_.",
+              "placeholder": "mkx_...",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
