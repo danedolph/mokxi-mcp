@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mokxi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build Arduino, ESP32 and Raspberry Pi Pico circuits with code from ChatGPT. Mokxi checks the circuit and returns a link that opens and runs it in the Mokxi browser simulator.",
   "author": {
     "name": "Mokxi LLC",

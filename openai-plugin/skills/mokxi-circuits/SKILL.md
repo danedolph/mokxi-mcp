@@ -27,6 +27,7 @@ Signing in to Mokxi is required.
 ## Rules
 
 - Use only Mokxi's own results. Don't search the web for photos or diagrams of the circuit, board or parts; show Mokxi's own images when a tool returns them, and lead with the Mokxi link, which opens the real, runnable circuit.
+- When you list boards or parts, show every item's Mokxi picture (its `image` field) next to its name and its `page` link, for each item in the list, not only the first. Group boards by family the way the tool result does.
 - Only use boards and parts the tools return. If a part doesn't exist in Mokxi, say so and suggest the closest one it has.
 - Keep the first version small and working, then offer upgrades.
 - Mokxi simulates circuits. It does not control real hardware. For anything with mains voltage, say it isn't safe to wire to a microcontroller, and use low-voltage parts in the simulation.
